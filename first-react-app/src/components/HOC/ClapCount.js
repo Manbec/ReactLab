@@ -3,7 +3,7 @@ import "./MediumClap.css"
 
 const ClapCount = ({count}) => {
   return (
-    <span className="clap-count">+ {count}</span>
+    <span id="clap-count" className="clap-count">+ {count}</span>
   );
 }
 

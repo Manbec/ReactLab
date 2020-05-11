@@ -5,9 +5,26 @@
     height: 100px;
     border-radius: 50%;
     border: 1px solid #bdc3c7;
-    background-color: white;
     background: none;
     user-select: none;
+}
+.clap:after {
+    content: '';
+    position: absolute;
+    width: 99px;
+    height: 99px;
+    display: block;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+.clap:hover {
+    cursor: pointer;
+    border: 1px solid #27ae60;
+    transition: border-color 0.3s ease-in;
+}
+.clap:hover:after {
+    animation: shockwave 1s ease-out infinite;
 }
 
 @keyframes shockwave {
@@ -16,10 +33,15 @@
         box-shadow: 0 0 2px #27ae60;
         opacity: 1;
     }
-    100% {
+    50% {
         transform: scale(1);
         opacity: 0;
         box-shadow: 0 0 50px #145b32, inset 0 0 10px #27ae60;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        box-shadow: 0 0 1px #27ae60;
     }
 }
 

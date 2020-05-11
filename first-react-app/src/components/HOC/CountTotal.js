@@ -2,7 +2,7 @@ import React from 'react';
 
 const CountTotal = ({countTotal}) => {
   return (
-    <span className="count-total">{countTotal}</span>
+    <span id="clap-count-total" className="count-total">{countTotal}</span>
   );
 }
 
