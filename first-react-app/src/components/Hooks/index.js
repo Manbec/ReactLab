@@ -1,10 +1,15 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
+import MediumClap from "./MediumClap";
 
 
 const HooksPageComponent = () => {
 
   return (
-    <h2>Hooks</h2>
+    <Container>
+      <h2>Hooks</h2>
+      <MediumClap />
+    </Container>
   );
 
 }

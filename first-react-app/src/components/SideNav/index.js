@@ -49,7 +49,9 @@ const SideNav = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const appLinks = [
     new LinkData('HOC', 'HOC'),
-    new LinkData('Compound Components', 'compound')];
+    new LinkData('Compound Components', 'compound'),
+    new LinkData('Hooks', 'hooks'),
+  ];
   const infoLinks = [new LinkData('About', 'about')];
 
   const theme = useTheme();
