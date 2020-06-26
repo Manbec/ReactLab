@@ -10,6 +10,7 @@ import SideNav from "./components/SideNav";
 import HOCPageComponent from "./components/HOC";
 import CompoundComponentsPageComponent from "./components/CompoundComponents";
 import HooksPageComponent from "./components/Hooks";
+import ReusableStylesPageComponent from "./components/ReusableStyles";
 
 function App() {
 
@@ -29,6 +30,9 @@ function App() {
                         </Route>
                         <Route path="/hooks">
                             <HooksPageComponent/>
+                        </Route>
+                        <Route path="/reusable-styles">
+                            <ReusableStylesPageComponent/>
                         </Route>
                         <Route path="/">
                             <Home/>

@@ -1,0 +1,92 @@
+/* Clap button */
+.clap {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #bdc3c7;
+    background: none;
+    user-select: none;
+}
+.clap:after {
+    content: '';
+    position: absolute;
+    width: 99px;
+    height: 99px;
+    display: block;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+.clap:hover {
+    cursor: pointer;
+    border: 1px solid #27ae60;
+    transition: border-color 0.3s ease-in;
+}
+.clap:hover:after {
+    animation: shockwave 1s ease-out infinite;
+}
+
+@keyframes shockwave {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 2px #27ae60;
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 0;
+        box-shadow: 0 0 50px #145b32, inset 0 0 10px #27ae60;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        box-shadow: 0 0 1px #27ae60;
+    }
+}
+
+/* Count */
+.clap-count {
+    position: absolute;
+    text-align: center;
+    left: 25px;
+    font-size: 1.2em;
+    top: -60px;
+    border-radius: 50%;
+    background-color: #27ae60;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Count Total */
+.count-total {
+    position: absolute;
+    top: -30px;
+    padding: 2px;
+    border-right: 2px;
+    text-align: center;
+    left: 22px;
+    font-size: 1.2em;
+    background-color: grey;
+    color: whitesmoke;
+    border-radius: 5px;
+    line-height: 20px;
+    width: 50px;
+    height: 20px;
+}
+
+/* Clap Icon */
+.clap-icon {
+    color: greenyellow;
+}
+
+.clap-icon.clicked {
+    color: gold;
+}
+
+/* Clap Info */
+.info {
+    position: relative;
+    top: 47px;
+}

@@ -51,6 +51,7 @@ const SideNav = () => {
     new LinkData('HOC', 'HOC'),
     new LinkData('Compound Components', 'compound'),
     new LinkData('Hooks', 'hooks'),
+    new LinkData('Reusable Styles', 'reusable-styles'),
   ];
   const infoLinks = [new LinkData('About', 'about')];
 
