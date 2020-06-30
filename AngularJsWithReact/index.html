@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Angular 1.x with React</title>
+</head>
+
+<body>
+<!--<script src="/node_modules/angular/angular.js"></script>-->
+<style>
+    .done-true{
+        text-decoration: line-through;
+    }
+    .done-false{
+        text-decoration: "";
+    }
+    .angular-part{
+        background-color: lightskyblue
+    }
+    .react-part{
+        background-color: cornflowerblue
+    }
+    .list-item{
+        cursor: pointer
+    }
+    .picker-container, .result-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+</style>
+
+<div ng-app="app">
+    <div ng-controller="TodoCtrl">
+        <div class="angular-part">
+            <h1>Angular TO-DO</h1>
+            <span>{{remaining()}} of {{todos.length}} remaining</span>
+            <ul class="unstyled">
+                <li ng-repeat="todo in todos">
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+            <form ng-submit="addTodo()">
+                <input type="text" ng-model="todoText"  size="30"
+                       placeholder="add new todo here">
+                <input class="btn-primary" type="submit" value="add">
+            </form>
+            <div>&nbsp;</div>
+        </div>
+        <div >  <!--ng-if={{todos}}-->
+            <react-directive todos=todos mark-complete="markItemCompleted(text)"></react-directive>
+        </div>
+        <div class="birthday-container">
+            <h1>Choose your birthday!! 🥳</h1>
+            <div class="picker-container">
+                <p ng-if="!birthday">Please tell us your birthday</p>
+                <datepicker-react-directive set-date="selectBirthday(date)"></datepicker-react-directive>
+            </div>
+            <div class="result-container">
+                <div ng-if="birthday">
+                    <img width=100 src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200403130207-underscored-virtual-bday-lead.jpg"/>
+                    <p>We'll call you on {{birthday}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="dist/bundle.min.js"></script>
+
+</body>
+</html>
