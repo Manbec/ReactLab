@@ -31,6 +31,9 @@ app.controller('TodoCtrl', function($scope) {
   $scope.selectBirthday = function(birthdayDate) {
     console.log('select birthday ', birthdayDate);
     $scope.birthday = birthdayDate;
+    if(!$scope.$$digest){
+      $scope.$apply();
+    }
   };
 
 })
